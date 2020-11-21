@@ -1,11 +1,10 @@
 import Vue from 'vue';
 import axios from 'axios';
+// import router from '../router';
 
 const sampleRequest = axios.create({
   baseURL: `${process.env.VUE_APP_API_PATH}`,
-  headers: {
-
-  },
+  headers: {},
 });
 
 const sampleFormRequest = axios.create({
@@ -21,10 +20,20 @@ const allRequest = [
 ];
 allRequest.forEach((item) => {
   item.interceptors.response.use(
-    (response) => response,
+    (response) => Promise.resolve(response),
     (err) => {
       if (err && err.response) {
+        let error = '';
         switch (err.response.status) {
+          case 400:
+            error = err.response.data;
+            Vue.swal({
+              icon: 'error',
+              title: '錯誤!',
+              text: error,
+              confirmButtonText: '關閉視窗',
+            });
+            break;
           case 401:
             Vue.swal({
               icon: 'error',

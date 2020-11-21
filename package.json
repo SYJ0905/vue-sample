@@ -17,6 +17,8 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "jquery": "^3.5.1",
+    "overlayscrollbars": "^1.13.0",
+    "overlayscrollbars-vue": "^0.2.2",
     "popper.js": "^1.16.1",
     "sweetalert2": "^10.10.1",
     "vee-validate": "^3.4.5",
