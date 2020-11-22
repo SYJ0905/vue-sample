@@ -90,3 +90,5 @@ allRequest.forEach((item) => {
     },
   );
 });
+
+// export const API = () => sampleRequest.get('');
