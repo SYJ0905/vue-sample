@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
@@ -24,6 +25,7 @@
     "vee-validate": "^3.4.5",
     "vue": "^2.6.11",
     "vue-axios": "^3.2.0",
+    "vue-chartjs": "^3.5.1",
     "vue-loading-overlay": "^3.4.2",
     "vue-router": "^3.2.0",
     "vue-sweetalert2": "^4.1.1",

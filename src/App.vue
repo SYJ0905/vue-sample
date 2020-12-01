@@ -16,9 +16,7 @@
 export default {
   components: {},
   data() {
-    return {
-
-    };
+    return {};
   },
   computed: {},
   watch: {},
