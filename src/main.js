@@ -32,9 +32,9 @@ Vue.component('ValidationObserver', ValidationObserver);
 Vue.filter('currency', currencyFilter);
 
 configure({
-  classes: {
-    invalid: 'form_input_is_invalid',
-  },
+  // classes: {
+  //   invalid: 'form_input_is_invalid',
+  // },
 });
 
 extend('required', {
