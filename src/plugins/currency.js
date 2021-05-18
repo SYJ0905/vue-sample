@@ -1,9 +1,7 @@
 export function currency(num) {
+  if (!num) return '';
   const n = Number(num);
-  return `${n.toFixed(0).replace(/./g, (c, i, a) => {
-    const cur = i && c !== '.' && (a.length - i) % 3 === 0 ? `,${c}`.replace(/\s/g, ' ') : c;
-    return cur;
-  })} `;
+  const reg = /\d{1,3}(?=(\d{3})+(\.\d*)?$)/g;
+  return `${n.toFixed(0).replace(reg, '$&,')}`;
 }
-
 export default currency;

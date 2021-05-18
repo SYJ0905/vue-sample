@@ -2,11 +2,15 @@ import Vue from 'vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 import 'bootstrap';
-import { ValidationProvider } from 'vee-validate';
+import {
+  ValidationObserver, ValidationProvider, extend, configure,
+} from 'vee-validate';
+import { email, regex } from 'vee-validate/dist/rules';
 import Loading from 'vue-loading-overlay';
 import VueSweetalert2 from 'vue-sweetalert2';
 import OverlayScrollbars from 'overlayscrollbars';
 import { OverlayScrollbarsPlugin } from 'overlayscrollbars-vue';
+// import VueGtag from 'vue-gtag';
 import draggable from 'vuedraggable';
 import App from './App.vue';
 import router from './router';
@@ -24,7 +28,35 @@ Vue.use(OverlayScrollbarsPlugin);
 Vue.component('Loading', Loading);
 Vue.component('Draggable', draggable);
 Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
 Vue.filter('currency', currencyFilter);
+
+configure({
+  classes: {
+    invalid: 'form_input_is_invalid',
+  },
+});
+
+extend('required', {
+  validate(value) {
+    return {
+      required: true,
+      valid: !['', null, undefined].includes(value),
+    };
+  },
+  message: '請輸入正確{_field_}',
+  computesRequired: true,
+});
+
+extend('regex', {
+  ...regex,
+  message: '請輸入正確密碼格式',
+});
+
+extend('email', {
+  ...email,
+  message: '請輸入正確 Email',
+});
 
 Vue.config.productionTip = false;
 
@@ -33,6 +65,10 @@ OverlayScrollbars(document.body, {
     initialize: false,
   },
 });
+
+// Vue.use(VueGtag, {
+//   config: { id: 'G-xxxxxxx' },
+// }, router);
 
 new Vue({
   router,

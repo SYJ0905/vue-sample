@@ -4,13 +4,22 @@ import axios from 'axios';
 
 const sampleRequest = axios.create({
   baseURL: `${process.env.VUE_APP_API_PATH}`,
-  headers: {},
+  headers: {
+    // 'Cache-Control': 'no-cache, no-store, must-revalidate',
+    // Pragma: 'no-cache',
+    // Expires: '0',
+    // 'If-None-Match': '',
+  },
 });
 
 const sampleFormRequest = axios.create({
   baseURL: `${process.env.VUE_APP_API_PATH}`,
   headers: {
     'Content-Type': 'multipart/form-data',
+    // 'Cache-Control': 'no-cache, no-store, must-revalidate',
+    // Pragma: 'no-cache',
+    // Expires: '0',
+    // 'If-None-Match': '',
   },
 });
 
