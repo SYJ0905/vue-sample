@@ -9,10 +9,17 @@ import OverlayScrollbars from 'overlayscrollbars';
 
 export default {
   methods: {
-    async scroll_top() {
-      OverlayScrollbars(document.body).scroll({
-        top: 0,
-      }, 300);
+    scroll_top() {
+      const osStatus = document.querySelector('html').classList.contains('os-html');
+      if (osStatus) {
+        OverlayScrollbars(document.body).scroll({
+          top: 0,
+        }, 300);
+      } else {
+        $('html, body').animate({
+          scrollTop: 0,
+        }, 300);
+      }
     },
   },
 };
