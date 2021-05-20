@@ -87,7 +87,7 @@ module.exports = {
       'box-shadow',
       'text-shadow',
       'resize',
-      'transition'
+      'transition',
     ],
     'property-no-vendor-prefix': null,
     'selector-max-compound-selectors': null,
