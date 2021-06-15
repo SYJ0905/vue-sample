@@ -1,8 +1,8 @@
 module.exports = {
   root: true,
   env: {
+    browser: true,
     node: true,
-    jquery: true,
   },
   extends: [
     'plugin:vue/recommended',

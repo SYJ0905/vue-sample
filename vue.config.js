@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const webpack = require('webpack');
+// const webpack = require('webpack');
 
 module.exports = {
   devServer: {
@@ -7,14 +7,14 @@ module.exports = {
   },
   publicPath: '/',
   outputDir: 'dist',
-  configureWebpack: {
-    plugins: [
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        Popper: ['popper.js', 'default'],
-      }),
-    ],
-  },
+  // configureWebpack: {
+  //   plugins: [
+  //     new webpack.ProvidePlugin({
+  //       $: 'jquery',
+  //       jQuery: 'jquery',
+  //       'window.jQuery': 'jquery',
+  //       Popper: ['popper.js', 'default'],
+  //     }),
+  //   ],
+  // },
 };
