@@ -1,14 +1,14 @@
 import Vue from 'vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
-import 'bootstrap';
+// import 'bootstrap';
 import {
   ValidationObserver, ValidationProvider, extend, configure,
 } from 'vee-validate';
 import { email, regex } from 'vee-validate/dist/rules';
 import Loading from 'vue-loading-overlay';
 import VueSweetalert2 from 'vue-sweetalert2';
-// import OverlayScrollbars from 'overlayscrollbars';
+import OverlayScrollbars from 'overlayscrollbars';
 import { OverlayScrollbarsPlugin } from 'overlayscrollbars-vue';
 // import VueGtag from 'vue-gtag';
 import draggable from 'vuedraggable';
@@ -60,11 +60,11 @@ extend('email', {
 
 Vue.config.productionTip = false;
 
-// OverlayScrollbars(document.body, {
-//   nativeScrollbarsOverlaid: {
-//     initialize: false,
-//   },
-// });
+OverlayScrollbars(document.body, {
+  nativeScrollbarsOverlaid: {
+    initialize: false,
+  },
+});
 
 // Vue.use(VueGtag, {
 //   config: { id: 'G-xxxxxxx' },

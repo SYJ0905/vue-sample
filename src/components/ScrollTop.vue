@@ -16,9 +16,10 @@ export default {
           top: 0,
         }, 300);
       } else {
-        $('html, body').animate({
-          scrollTop: 0,
-        }, 300);
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
       }
     },
   },
